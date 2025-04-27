@@ -1,7 +1,16 @@
+using Homework_SkillTree.Data;
+//using Microsoft.EntityFrameworkCore;
+using System;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// ¥[¤J EF Core
+//builder.Services.AddDbContext<HomeworkServiceContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
 
 var app = builder.Build();
 

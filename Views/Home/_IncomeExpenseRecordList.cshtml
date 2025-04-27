@@ -1,0 +1,27 @@
+﻿@model List<Homework_SkillTree.Models.IncomeExpenseRecordModel>
+@using Homework_SkillTree.Common
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>流水號</th>
+            <th>類別</th>
+            <th>金額</th>
+            <th>日期</th>
+            <th>備註</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            var item = Model[i];
+            <tr>
+                <td>@(i + 1)</td>
+                <td>@item.Category.GetDisplayName()</td>
+                <td>@item.Amount</td>
+                <td>@item.Date.ToString("yyyy-MM-dd")</td>
+                <td>@item.Note</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+﻿@using Homework_SkillTree.Common
+@using Homework_SkillTree.Models
+
+<form asp-action="Index" asp-controller="Home" method="post" class="row">
+    <div class="col-md-12 mb-2">
+        <label for="category" class="form-label">類別</label>
+        <select class="form-select" id="category" name="category" required>
+            @foreach (var value in Enum.GetValues(typeof(CategoryType)).Cast<CategoryType>())
+            {
+                <option value="@((int)value)">@value.GetDisplayName()</option>
+            }
+        </select>
+    </div>
+    <div class="col-md-12 mb-2">
+        <label for="amount" class="form-label">金額</label>
+        <input type="number" class="form-control" id="amount" name="amount" required>
+    </div>
+
+    <div class="col-md-12 mb-2">
+        <label for="date" class="form-label">日期</label>
+        <input type="date" class="form-control" id="date" name="date" required>
+    </div>
+
+    <div class="col-md-12 mb-2">
+        <label for="note" class="form-label">備註</label>
+        <input type="text" class="form-control" id="note" name="note">
+    </div>
+
+    <div class="col-md-12 mb-2">
+        <button type="submit" class="btn btn-primary">新增紀錄</button>
+    </div>
+</form>
